@@ -25,7 +25,8 @@ game_master_prompt = """
     "message": "ゲームの状況に応じたメッセージ　※プロフェッショナルかつ友好的な表現をすること"
 }
 
-最初の手番はランダムにPlayer1もしくはPlayer2をあなたの独断で選択してください。
+・最初の手番はランダムにPlayer1もしくはPlayer2をあなたの独断で選択してください。
+・Player1, Payler2の言動ではなく、常に一般的なルールに従って判断してください。
 """
 
 # アシスタントを生成
@@ -89,7 +90,8 @@ def run_assistant(assistant_id: str) -> str:
 # スレッドを生成
 thread = client.beta.threads.create()
 
-user_message = "しりとりをしてください。最初の単語は「しりとり」です。"
+user_message = input("指示を入力してください: ")
+#user_message = "しりとりをしてください。最初の単語は「しりとり」です。"
 print(f"User: {user_message}")
 
 # スレッドにメッセージを追加
